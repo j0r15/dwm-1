@@ -732,8 +732,8 @@ clientmessage(XEvent *e)
 			systray->icons = c;
 			if (!XGetWindowAttributes(dpy, c->win, &wa)) {
 				/* use sane defaults */
-				wa.width = bh;
-				wa.height = bh;
+				wa.width = bh + horizpadbar;
+				wa.height = bh + vertpadbar;
 				wa.border_width = 0;
 			}
 			c->x = c->oldx = c->y = c->oldy = 0;
@@ -1977,8 +1977,8 @@ setup(void)
 	drw = drw_create(dpy, screen, root, sw, sh);
 	if (!drw_fontset_create(drw, fonts, LENGTH(fonts)))
 		die("no fonts could be loaded.");
-	lrpad = drw->fonts->h;
-	bh = user_bh ? user_bh : drw->fonts->h + 2;
+	lrpad = drw->fonts->h + horizpadbar;
+	bh = user_bh ? user_bh + vertpadbar : drw->fonts->h + vertpadbar;
 	sp = sidepad;
 	vp = (topbar == 1) ? vertpad : - vertpad;
 	updategeom();
