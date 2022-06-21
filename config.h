@@ -245,7 +245,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("torwrap") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
 	/* { MODKEY,			XK_F8,		spawn,		SHCMD("mw -Y") }, */
-	{ MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
+	{ MODKEY,			XK_F9,		spawn,		SHCMD("todo") },
 	{ MODKEY,			XK_F10,		spawn,		SHCMD("dmenuumount") },
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
 	/* { MODKEY,			XK_F12,		spawn,		SHCMD("remaps & notify-send \\\"⌨️ Keyboard remapping...\\\" \\\"Re-running keyboard defaults for any newly plugged-in keyboards.\\\"") }, */
@@ -264,11 +264,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("playerctl -p spotify previous") },
 	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("playerctl -p spotify next") },
-	{ 0, XF86XK_AudioPause,		spawn,		SHCMD("mpc pause") },
 	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("playerctl -p spotify play-pause") },
-	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("mpc stop") },
-	{ 0, XF86XK_AudioRewind,	spawn,		SHCMD("mpc seek -10") },
-	{ 0, XF86XK_AudioForward,	spawn,		SHCMD("mpc seek +10") },
 	/* { 0, XF86XK_AudioMedia,		spawn,		SHCMD(TERMINAL " -e ncmpcpp") }, */
 	/* { 0, XF86XK_AudioMicMute,	spawn,		SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") }, */
 	/* { 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") }, */
