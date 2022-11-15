@@ -62,10 +62,10 @@ static const Rule rules[] = {
 	*/
 	/* class    instance      title       	 tags mask    isfloating   isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,       NULL,       	    1 << 8,       0,           0,         0,        -1 },
-	{ "Spotify",     NULL,       NULL,       	    1 << 7,       0,           0,         0,        -1 },
+	{ "Spotify",     NULL,       "Spotify",       	    1 << 7,       0,           0,         0,        -1 },
 	{ "firefox",     NULL,       NULL,       	    1 << 8,       0,           0,         0,        -1 },
-	{ "VNote",     NULL,       NULL,       	    1 << 6,       0,           0,         0,        -1 },
-	{ "Thunderbird",     NULL,       NULL,       	    1 << 4,       0,           0,         0,        -1 },
+	{ "xfce4-notes",     NULL,       NULL,       	    0,       1,           0,         0,        -1 },
+	{ "thunderbird",     NULL,       NULL,       	    1 << 4,       0,           0,         0,        -1 },
 	{ "TelegramDesktop",     NULL,       NULL,       	    1 << 5,       0,           0,         0,        -1 },
 	{ TERMCLASS,   NULL,       NULL,       	    0,            0,           1,         0,        -1 },
 	{ NULL,       NULL,       "Event Tester",   0,            0,           0,         1,        -1 },
@@ -259,6 +259,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Print,	spawn,		SHCMD("dmenurecord kill") },
 	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dmenurecord kill") },
 	{ MODKEY,			XK_Scroll_Lock,	spawn,		SHCMD("killall screenkey || screenkey &") },
+	{ MODKEY|ShiftMask,			XK_v,	spawn,		SHCMD("killall picom || picom &") },
 
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -44 $(pidof dwmblocks)") },
