@@ -67,6 +67,7 @@ static const Rule rules[] = {
 	{ "xfce4-notes",     NULL,       NULL,       	    0,       1,           0,         0,        -1 },
 	{ "thunderbird",     NULL,       NULL,       	    1 << 4,       0,           0,         0,        -1 },
 	{ "TelegramDesktop",     NULL,       NULL,       	    1 << 5,       0,           0,         0,        -1 },
+	{ "Element",     NULL,       NULL,       	    1 << 5,       0,           0,         0,        -1 },
 	{ TERMCLASS,   NULL,       NULL,       	    0,            0,           1,         0,        -1 },
 	{ NULL,       NULL,       "Event Tester",   0,            0,           0,         1,        -1 },
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
