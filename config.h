@@ -62,9 +62,8 @@ static const Rule rules[] = {
 	*/
 	/* class    instance      title       	 tags mask    isfloating   isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,       NULL,       	    1 << 8,       0,           0,         0,        -1 },
-	{ "Spotify",     NULL,       "Spotify",       	    1 << 7,       0,           0,         0,        -1 },
+	{ "Spotify",     NULL,    "Spotify",       	    1 << 7,       0,           0,         0,        -1 },
 	{ "firefox",     NULL,       NULL,       	    1 << 8,       0,           0,         0,        -1 },
-	{ "xfce4-notes",     NULL,       NULL,       	    0,       1,           0,         0,        -1 },
 	{ "thunderbird",     NULL,       NULL,       	    1 << 4,       0,           0,         0,        -1 },
 	{ "TelegramDesktop",     NULL,       NULL,       	    1 << 5,       0,           0,         0,        -1 },
 	{ "Element",     NULL,       NULL,       	    1 << 5,       0,           0,         0,        -1 },
@@ -72,10 +71,11 @@ static const Rule rules[] = {
 	{ NULL,       NULL,       "Event Tester",   0,            0,           0,         1,        -1 },
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
 	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),     1,           1,         0,        -1 },
+	{ "Xfce4-notes",     NULL,       NULL,       	    1 << 6,       1,           0,         0,        -1 },
 };
 
 /* layout(s) */
-static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
@@ -178,7 +178,7 @@ static Key keys[] = {
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
-	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD(TERMINAL " -e nmtui") },
+	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("firefox -p private") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("thunderbird") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD(TERMINAL " -e ranger") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD(TERMINAL " -e htop") },
@@ -284,8 +284,8 @@ static Key keys[] = {
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOn,		spawn,		SHCMD("synclient TouchpadOff=0") },
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 10") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 10") },
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("brightnessctl s +10%") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("brightnessctl s 10%-") },
 
 	/* { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } }, */
